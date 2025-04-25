@@ -54,17 +54,13 @@ console.log(typeof string_n); //string
 let p = 123456;
 console.log(p.toExponential(2)); // "1.23e+5"
 
-
 // Number Conversion
 
-Number("123");     // 123
-Number("abc");     // NaN
-Number(true);      // 1
-Number(false);     // 0
+Number("123"); // 123
+Number("abc"); // NaN
+Number(true); // 1
+Number(false); // 0
 
-
-parseInt("123px");      // 123
-parseFloat("3.14abc");  // 3.14
-parseInt("011", 10);    // 11 (base 10)
-
-
+parseInt("123px"); // 123
+parseFloat("3.14abc"); // 3.14
+parseInt("011", 10); // 11 (base 10)
