@@ -1,4 +1,4 @@
-// 3. Variable Naming Rules
+// Variable Naming Rules
 
 //Must begin with a letter, _, or $
 let company = 'Techno'
