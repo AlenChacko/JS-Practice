@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const promise1 = new Promise((resolve, reject) => {
+        reject("Promise 1 api call failed");
+        // resolve(["Javscript", "Java"]);
+      });
+
+      const promise2 = new Promise((resolve, reject) => {
+        reject("Promise 2 api call failed");
+        //   resolve(["React", "Angular"]);
+      });
+
+      const promise3 = new Promise((resolve, reject) => {
+        reject("Promise 3 api call failed");
+        // resolve(["Node", "Python"]);
+      });
+
+      // promise1
+      //   .then((res) => {
+      //     console.log(res);
+      //   })
+      //   .catch((err) => {
+      //     console.log(err);
+      //   });
+
+      // promise2
+      //   .then((res) => {
+      //     console.log(res);
+      //   })
+      //   .catch((err) => {
+      //     console.log(err);
+      //   });
+
+      //   promise3
+      //   .then((res) => {
+      //     console.log(res);
+      //   })
+      //   .catch((err) => {
+      //     console.log(err);
+      //   });
+
+      // Promise.all()  ====>>>> works when all promises are resolved
+
+      const allPromises = Promise.all([promise1, promise2, promise3]);
+
+      // allPromises
+      //   .then((res) => {
+      //     console.log(res);
+      //   })
+      //   .catch((err) => {
+      //     console.log(err);
+      //   });
+
+      // Promise.allSettled()  ====>>>> get the results with status, whether all promises are resolved or reject
+
+      const allSettledPromises = Promise.allSettled([
+        promise1,
+        promise2,
+        promise3,
+      ]);
+
+      // allSettledPromises
+      //   .then((res) => {
+      //     console.log(res);
+      //   })
+      //   .catch((err) => {
+      //     console.log(err);
+      //   });
+
+      // Promise.any()  ====>>>> will check all promises and return the first one is resolved, if all are rejected it will show the error message
+
+      const anyPromises = Promise.any([promise1, promise2, promise3]);
+
+      //   anyPromises
+      //     .then((res) => {
+      //       console.log(res);
+      //     })
+      //     .catch((err) => {
+      //       console.log(err);
+      //     });
+
+      // Promise.any()  ====>>>> return first promise whether it is resolved or rejected
+
+      const racePromises = Promise.race([promise1, promise2, promise3]);
+
+      racePromises
+        .then((res) => {
+          console.log(res);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    </script>
+  </body>
+</html>
